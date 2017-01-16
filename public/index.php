@@ -1,7 +1,3 @@
-<?php /*
-	von Frederic Köberl
-	4aITI - 11.01.2017
-*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
