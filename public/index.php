@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Frederic Köberl's yolo swag</title>
+	<title>Layout</title>
 	<link href="css/style.css" rel="stylesheet" />
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
 	<link href="css/bootstrap-flatty.min.css" rel="stylesheet" />
@@ -10,21 +10,21 @@
 	<?php include '../pages/menu.php' ?>
 	<div class="container">
 		<?php
-		$errorPagePath = '../pages/error.php';
+		$errorPage = '../pages/error.php';
 
 		try {
-			include '../database.php'; 
+			include '../classes/database.php';
 			
 			$page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'index';
-			$pagePath = '../pages/' . $page . '.php';
+			$page = '../pages/' . $page . '.php';
 			
-			if(file_exists($pagePath)) {
-				include $pagePath;
+			if(file_exists($page)) {
+				include $page;
 			} else {
-				include $errorPagePath;
+				include $errorPage;
 			}
 		} catch(Exception $exeption) {
-			include $errorPagePath;
+			include $errorPage;
 		}
 		?>
 	</div>
