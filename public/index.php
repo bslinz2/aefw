@@ -7,16 +7,21 @@
 	<link href="css/bootstrap-flatty.min.css" rel="stylesheet" />
 </head>
 <body>
-	<?php include '../pages/menu.php' ?>
+    <?php
+    $pagesDir = __DIR__ . '/../pages/';
+    ?>
+	<?php include $pagesDir . 'menu.php' ?>
 	<div class="container">
 		<?php
-		$errorPage = '../pages/error.php';
+		$errorPage = $pagesDir . 'error.php';
 
 		try {
-			include '../classes/database.php';
+			include __DIR__ . '/../database.php';
 			
 			$page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'index';
-			$page = '../pages/' . $page . '.php';
+			$page = $pagesDir . $page . '.php';
+			var_dump($page);
+			die();
 			
 			if(file_exists($page)) {
 				include $page;
