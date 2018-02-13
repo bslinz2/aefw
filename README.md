@@ -1,7 +1,7 @@
-#aefw
+# aefw
 
 ## Database
-select 
+### select 
 ```
 array DB::query(string $query, [string $types], [... mixed $parameters]);
 
@@ -14,7 +14,7 @@ DB::query('SELECT * FROM table_name');
 DB::query('SELECT * FROM table_name WHERE col = ?', 's', $stringColValue);
 ```
 
-insert / update
+### insert / update
 ```
 int DB::modify(string $query, [string $types], [... mixed $parameters]);
 
